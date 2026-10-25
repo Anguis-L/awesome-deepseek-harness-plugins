@@ -1,0 +1,12 @@
+{
+  "$schema": "../schema/plugin.schema.json",
+  "id": "Anguis-L/dsh-plugin-trust-audit",
+  "name": "dsh-plugin-trust-audit",
+  "repository": "https://github.com/Anguis-L/dsh-plugin-trust-audit",
+  "category": "dev",
+  "description": {
+    "en": "Read-only audit of whether a DSH plugin's HTTP routes are actually fenced. Discovers the routes installed plugins really register by reading their code, then issues unauthenticated, cross-port-Origin and cross-site-Origin GET probes against loopback only, reporting fenced / open / absent / unknown with the status codes observed. Each finding also carries static fence evidence with line numbers, which can only soften a verdict, never harden one, so a maintainer who did add a fence is never reported as careless.",
+    "zh": "只读审计 DSH 插件的 HTTP 路由是否真的做了鉴权栅栏。先从已安装插件的代码里读出它们真正注册的路由，再仅对回环地址发起「无凭据」「跨端口 Origin」「跨站 Origin」三组 GET 探测，按实际观测到的状态码判定 fenced / open / absent / unknown。每条发现附带带行号的静态鉴权证据；该证据只能软化判定、不能硬化，以避免把已经加了栅栏的维护者误报成不在意安全。"
+  },
+  "added": "2026-10-25"
+}
